@@ -1,0 +1,28 @@
+{
+  "name": "bookmark-manager",
+  "version": "1.0.0",
+  "description": "A bookmark manager web application with REST API backend and frontend client",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/app.js",
+    "client": "node client/server.js",
+    "dev": "concurrently \"nodemon server/app.js\" \"nodemon client/server.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["bookmark", "manager", "rest", "api", "web", "application"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "express-validator": "^7.0.1",
+    "axios": "^1.6.8",
+    "cheerio": "^1.0.0-rc.12",
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

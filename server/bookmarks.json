@@ -1,0 +1,98 @@
+[
+  {
+    "id": "17711381300452mnnaki0s",
+    "url": "https://tailwindcss.com",
+    "title": "Tailwind CSS",
+    "description": "A utility-first CSS framework",
+    "tags": [
+      "css",
+      "framework",
+      "design"
+    ],
+    "createdAt": "2026-02-15T06:48:50.045Z"
+  },
+  {
+    "id": "seed1",
+    "url": "https://github.com",
+    "title": "GitHub: Where the world builds software",
+    "description": "GitHub is where over 100 million developers shape the future of software, together.",
+    "tags": [
+      "development",
+      "git",
+      "coding"
+    ],
+    "createdAt": "2026-02-14T10:00:00.000Z"
+  },
+  {
+    "id": "seed2",
+    "url": "https://stackoverflow.com",
+    "title": "Stack Overflow - Where Developers Learn, Share, & Build Careers",
+    "description": "Stack Overflow is the largest, most trusted online community for developers to learn and share their programming knowledge.",
+    "tags": [
+      "development",
+      "community",
+      "programming"
+    ],
+    "createdAt": "2026-02-14T11:00:00.000Z"
+  },
+  {
+    "id": "seed3",
+    "url": "https://developer.mozilla.org",
+    "title": "MDN Web Docs",
+    "description": "The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs for both Web sites and progressive web apps.",
+    "tags": [
+      "documentation",
+      "web",
+      "reference"
+    ],
+    "createdAt": "2026-02-14T12:00:00.000Z"
+  },
+  {
+    "id": "seed4",
+    "url": "https://nodejs.org",
+    "title": "Node.js",
+    "description": "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
+    "tags": [
+      "javascript",
+      "runtime",
+      "backend"
+    ],
+    "createdAt": "2026-02-14T13:00:00.000Z"
+  },
+  {
+    "id": "seed5",
+    "url": "https://www.npmjs.com",
+    "title": "npm | Build amazing things",
+    "description": "We're npm, Inc., the company behind Node package manager, the world's largest software registry.",
+    "tags": [
+      "javascript",
+      "packages",
+      "tools"
+    ],
+    "createdAt": "2026-02-14T14:00:00.000Z"
+  },
+  {
+    "id": "seed6",
+    "url": "https://expressjs.com",
+    "title": "Express - Node.js web application framework",
+    "description": "Fast, unopinionated, minimalist web framework for Node.js",
+    "tags": [
+      "javascript",
+      "framework",
+      "backend"
+    ],
+    "createdAt": "2026-02-14T15:00:00.000Z"
+  },
+  {
+    "id": "seed7",
+    "url": "https://code.visualstudio.com",
+    "title": "Visual Studio Code",
+    "description": "Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop.",
+    "tags": [
+      "editor",
+      "development",
+      "tools"
+    ],
+    "createdAt": "2026-02-14T16:00:00.000Z"
+  }
+]
