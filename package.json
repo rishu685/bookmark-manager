@@ -8,6 +8,8 @@
     "server": "node server/app.js",
     "client": "node client/server.js",
     "dev": "concurrently \"nodemon server/app.js\" \"nodemon client/server.js\"",
+    "build": "mkdir -p dist && cp client/public/* dist/",
+    "build:netlify": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["bookmark", "manager", "rest", "api", "web", "application"],

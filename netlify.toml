@@ -1,0 +1,29 @@
+[build]
+  publish = "dist"
+  functions = "netlify/functions"
+  command = "npm run build"
+
+[functions]
+  node_bundler = "esbuild"
+
+# API Routes
+[[redirects]]
+  from = "/api/bookmarks/*"
+  to = "/.netlify/functions/bookmarks/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/bookmarks"
+  to = "/.netlify/functions/bookmarks"
+  status = 200
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/bookmarks/health"
+  status = 200
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

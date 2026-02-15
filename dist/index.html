@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z' fill='%236366f1'/></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bookmark Manager</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" class="theme-btn" title="Toggle dark mode">🌙</button>
+            </div>
+        </header>
+
+        <!-- Controls Section -->
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search bookmarks by title or URL..." autocomplete="off">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <div class="filter-container">
+                <div class="active-filter" id="active-filter" style="display: none;">
+                    <span>Filter: </span>
+                    <span class="filter-tag" id="filter-tag-display"></span>
+                    <button id="clear-filter-btn" class="clear-filter">✕</button>
+                </div>
+            </div>
+
+            <button id="add-bookmark-btn" class="btn btn-primary">Add Bookmark</button>
+        </div>
+
+        <!-- Add/Edit Bookmark Form -->
+        <div id="bookmark-form-container" class="form-container" style="display: none;">
+            <form id="bookmark-form" class="bookmark-form">
+                <h2 id="form-title">Add New Bookmark</h2>
+                
+                <div class="form-group">
+                    <label for="bookmark-url">URL *</label>
+                    <input type="url" id="bookmark-url" required placeholder="https://example.com">
+                    <div class="error-message" id="url-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookmark-title">Title *</label>
+                    <input type="text" id="bookmark-title" required maxlength="200" placeholder="Enter bookmark title">
+                    <div class="error-message" id="title-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookmark-description">Description</label>
+                    <textarea id="bookmark-description" maxlength="500" placeholder="Optional description" rows="3"></textarea>
+                    <div class="error-message" id="description-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bookmark-tags">Tags</label>
+                    <input type="text" id="bookmark-tags" placeholder="Enter tags separated by commas (max 5)">
+                    <small class="help-text">Enter tags separated by commas. Maximum 5 tags allowed.</small>
+                    <div class="error-message" id="tags-error"></div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="cancel-form-btn" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" id="save-bookmark-btn" class="btn btn-primary">Save Bookmark</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Bookmarks List -->
+        <div class="bookmarks-section">
+            <div class="bookmarks-header">
+                <h2>Your Bookmarks</h2>
+                <div class="bookmarks-count">
+                    <span id="bookmarks-count">0 bookmarks</span>
+                </div>
+            </div>
+            
+            <div id="loading-message" class="message">Loading bookmarks...</div>
+            <div id="error-message" class="message error" style="display: none;"></div>
+            <div id="empty-message" class="message" style="display: none;">
+                <p>No bookmarks found. Add your first bookmark to get started!</p>
+            </div>
+            
+            <div id="bookmarks-list" class="bookmarks-list"></div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Delete Bookmark</h3>
+            <p>Are you sure you want to delete this bookmark?</p>
+            <div class="bookmark-preview" id="delete-bookmark-preview"></div>
+            <div class="modal-actions">
+                <button id="cancel-delete-btn" class="btn btn-secondary">Cancel</button>
+                <button id="confirm-delete-btn" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

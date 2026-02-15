@@ -32,6 +32,52 @@ A full-stack web application for managing bookmarks with a REST API backend and 
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:3001
 
+## 🚀 Netlify Deployment
+
+This application is configured for easy deployment on Netlify with serverless functions.
+
+### Deploy to Netlify
+
+1. **Fork this repository** to your GitHub account
+
+2. **Connect to Netlify:**
+   - Go to [Netlify](https://netlify.com)
+   - Click "New site from Git"
+   - Choose your forked repository
+
+3. **Configure build settings:**
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Functions directory: `netlify/functions`
+
+4. **Deploy:**
+   - Click "Deploy site"
+   - Netlify will automatically build and deploy your app
+
+### Manual Deployment
+
+Alternatively, you can deploy manually:
+
+```bash
+# Build for production
+npm run build
+
+# Install Netlify CLI (if not installed)
+npm install -g netlify-cli
+
+# Login to Netlify
+netlify login
+
+# Deploy to Netlify
+netlify deploy --prod --dir=dist --functions=netlify/functions
+```
+
+### Environment Configuration
+
+The app automatically detects the environment:
+- **Local development:** Uses `http://localhost:3001` for API
+- **Production (Netlify):** Uses `/api` endpoints (Netlify Functions)
+
 ## 🛠️ Tech Stack Used
 
 ### Backend
@@ -56,11 +102,21 @@ A full-stack web application for managing bookmarks with a REST API backend and 
 - **Development:** nodemon (for auto-restart)
 - **Version Control:** Git
 - **Platform:** Cross-platform (macOS, Linux, Windows)
+- **Deployment:** Netlify with serverless functions
+- **Build Process:** Automated with npm scripts
 
 ### Storage
-- **Database:** JSON file storage (`server/bookmarks.json`)
+- **Local Development:** JSON file storage (`server/bookmarks.json`)
+- **Production (Netlify):** Serverless function with `/tmp` storage
 - **Data Persistence:** File system based
 - **Seed Data:** 7 pre-loaded bookmarks
+
+### Netlify Functions Architecture
+- **API Endpoints:** Converted to Netlify serverless functions
+- **Function Location:** `netlify/functions/bookmarks.js`
+- **Runtime:** Node.js 18.x
+- **Storage:** Temporary file system (`/tmp` directory)
+- **Auto-scaling:** Serverless architecture handles traffic automatically
 
 ## 🤖 AI Tools Used
 

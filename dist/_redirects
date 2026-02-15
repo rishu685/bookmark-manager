@@ -1,0 +1,4 @@
+/api/bookmarks/* /.netlify/functions/bookmarks/:splat 200
+/api/bookmarks /.netlify/functions/bookmarks 200
+/api/health /.netlify/functions/bookmarks/health 200
+/* /index.html 200
