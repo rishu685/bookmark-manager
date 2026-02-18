@@ -1,6 +1,6 @@
 # 📚 Bookmark Manager
 
-A full-stack web application for managing bookmarks with a REST API backend and responsive frontend client.
+A full-stack web application for managing bookmarks with a REST API backend and responsive frontend client..
 
 ## 🚀 Setup Instructions
 
